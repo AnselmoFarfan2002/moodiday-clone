@@ -24,11 +24,11 @@ export default function VideoCarousel({
           seconds={21}
         />
         <VideoCard
-          id="2KXKPNYvF3EvnT01t7iuAvKdiTsY02GdYEUcEjhyl5wBY"
-          title="PLUGplay Exotics Vape Cartridge"
-          feeling="Loved"
+          id="BFHIxBMtly01yBD7aTwflh33I24Tl6MWI9BtgV79eFIk"
+          title="Chimuelo dance"
+          feeling="Mixed"
           minutes={0}
-          seconds={21}
+          seconds={10}
         />
         <VideoCard
           id="2KXKPNYvF3EvnT01t7iuAvKdiTsY02GdYEUcEjhyl5wBY"

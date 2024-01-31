@@ -4,7 +4,6 @@ import useProduct from "@/hooks/useProduct";
 import MuxPlayer from "@mux/mux-player-react/lazy";
 import { useRouter } from "next/navigation";
 import FeelingTag from "../custom/tag";
-import { typography } from "@/styles/typography";
 import { useEffect } from "react";
 
 export default function VideoModal({ title }: { title: string }) {
@@ -13,11 +12,6 @@ export default function VideoModal({ title }: { title: string }) {
   const router = useRouter();
   const onClose = () => router.back();
 
-  useEffect(() => {
-    let ov = document.querySelector("main")?.style ?? { overflow: "" };
-    ov.overflow = "hidden";
-  }, []);
-
   const LinePropValue = ({ prop, value }: { prop: string; value: string }) => (
     <p>
       <span className="font-semibold">{prop}</span>: {value}
@@ -25,13 +19,19 @@ export default function VideoModal({ title }: { title: string }) {
   );
 
   return (
-    <article className="w-full h-full fixed top-0 left-0 bg-slate-500/25 z-20 flex justify-center items-center">
+    <article className="w-[100vw] h-[100vh] fixed top-0 left-0 bg-slate-500/25 z-20 flex justify-center items-center">
       <div className="w-full h-full fixed" onClick={onClose} />
-      <div className="h-full max-h-[600px] w-[800px] bg-white flex rounded-2xl sm:overflow-hidden z-30">
-        <section>
+      <div
+        // className={`h-full max-h-[600px] max-w-[800px] bg-white flex rounded-2xl z-30 overflow-scroll
+        // sm:overflow-hidden`}
+        className={`h-full w-full bg-white z-30 overflow-scroll
+        sm:flex sm:max-h-[600px] sm:max-w-[800px] sm:overflow-hidden md:rounded-2xl`}
+      >
+        <section className="flex justify-center bg-black w-full">
           <MuxPlayer
             playbackId={review.id}
             startTime={0}
+            theme="Classic"
             style={{ height: "600px", width: "337px" }}
             autoPlay={true}
           />

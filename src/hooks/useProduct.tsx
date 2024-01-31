@@ -11,7 +11,10 @@ export default function useProduct({ name }: { name: string }): {
     creator: "Stephanie C.",
     states: ["Illinois", "Massachusetts"],
     review: {
-      id: "2KXKPNYvF3EvnT01t7iuAvKdiTsY02GdYEUcEjhyl5wBY",
+      id:
+        name == "Chimuelo dance"
+          ? "BFHIxBMtly01yBD7aTwflh33I24Tl6MWI9BtgV79eFIk"
+          : "2KXKPNYvF3EvnT01t7iuAvKdiTsY02GdYEUcEjhyl5wBY",
       title: "PLUGplay Exotics Vape Cartridge",
       feeling: "Loved",
       minutes: 0,
