@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+header {
+  transition: .1s;
+}
+
+.icon-button {
+  display: grid;
+  align-items: center;
+  border-radius: 30px;
+}
+
+.icon-button:active,
+.icon-button:focus {
+  outline-color: bisque;
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;
+}
