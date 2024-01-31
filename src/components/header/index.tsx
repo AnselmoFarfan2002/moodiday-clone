@@ -10,22 +10,22 @@ export default function Header() {
   const Links = () => (
     <>
       <Link
-        className={`${pageLinkClass} hover:bg-slate-100`}
+        className={`${pageLinkClass} hover:bg-slate-100 flex-1 text-center`}
         href={"/products"}
       >
         Products
       </Link>
       <Link
-        className={`${pageLinkClass} hover:bg-slate-100`}
+        className={`${pageLinkClass} hover:bg-slate-100 flex-1 text-center`}
         href={"/accessories-devices"}
       >
         Accessories & Devices
       </Link>
-      <Link className={`${pageLinkClass} hover:bg-slate-100`} href={"/strains"}>
+      <Link className={`${pageLinkClass} hover:bg-slate-100 flex-1 text-center`} href={"/strains"}>
         Strains
       </Link>
       <Link
-        className={`${pageLinkClass} hover:bg-slate-100`}
+        className={`${pageLinkClass} hover:bg-slate-100 flex-1 text-center`}
         href={"/tips-tricks"}
       >
         Tips & Tricks
@@ -50,7 +50,7 @@ export default function Header() {
             <Links />
           </div>
 
-          <div className={`${container} flex flex-row py-1 px-1 font-normal`}>
+          <div className={`${container} flex flex-row py-1 px-1 font-normal flex-1 lg:flex-none`}>
             <button className="icon-button text-slate-400" title="Search">
               <span className="material-symbols-outlined">search</span>
             </button>
@@ -72,7 +72,7 @@ export default function Header() {
           </Link>
         </div>
 
-        <div className="lg:hidden flex gap-2 flex-nowrap sm:align-middle shrink-0 w-full justify-center overflow-x-auto py-3">
+        <div className="lg:hidden flex gap-2 flex-nowrap align-middle sm:justify-center overflow-x-auto pt-3 pb-6">
           <Links />
         </div>
       </header>
