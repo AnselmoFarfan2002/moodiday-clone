@@ -9,16 +9,25 @@ export default function Header() {
 
   const Links = () => (
     <>
-      <Link className={pageLinkClass} href={"/products"}>
+      <Link
+        className={`${pageLinkClass} hover:bg-slate-100`}
+        href={"/products"}
+      >
         Products
       </Link>
-      <Link className={pageLinkClass} href={"/accessories-devices"}>
+      <Link
+        className={`${pageLinkClass} hover:bg-slate-100`}
+        href={"/accessories-devices"}
+      >
         Accessories & Devices
       </Link>
-      <Link className={pageLinkClass} href={"/strains"}>
+      <Link className={`${pageLinkClass} hover:bg-slate-100`} href={"/strains"}>
         Strains
       </Link>
-      <Link className={pageLinkClass} href={"/tips-tricks"}>
+      <Link
+        className={`${pageLinkClass} hover:bg-slate-100`}
+        href={"/tips-tricks"}
+      >
         Tips & Tricks
       </Link>
     </>
@@ -63,7 +72,7 @@ export default function Header() {
           </Link>
         </div>
 
-        <div className="lg:hidden flex gap-2 flex-nowrap align-middle shrink-0 basis-full justify-center overflow-x-auto py-3">
+        <div className="lg:hidden flex gap-2 flex-nowrap sm:align-middle shrink-0 w-full justify-center overflow-x-auto py-3">
           <Links />
         </div>
       </header>
