@@ -21,7 +21,10 @@ export default function Header() {
       >
         Accessories & Devices
       </Link>
-      <Link className={`${pageLinkClass} hover:bg-slate-100 flex-1 text-center`} href={"/strains"}>
+      <Link
+        className={`${pageLinkClass} hover:bg-slate-100 flex-1 text-center`}
+        href={"/strains"}
+      >
         Strains
       </Link>
       <Link
@@ -36,7 +39,7 @@ export default function Header() {
   return (
     <>
       <HeaderEffect />
-      <header className="px-6 fixed w-full bg-white">
+      <header className="px-6 fixed w-full bg-white z-10">
         <div className="pt-6 lg:py-6 flex gap-2 justify-between align-middle sm:flex-wrap max-w-6xl mx-auto">
           <Link href={"/"} className="whitespace-nowrap">
             <h2
@@ -50,7 +53,9 @@ export default function Header() {
             <Links />
           </div>
 
-          <div className={`${container} flex flex-row py-1 px-1 font-normal flex-1 lg:flex-none`}>
+          <div
+            className={`${container} flex flex-row py-1 px-1 font-normal flex-1 lg:flex-none`}
+          >
             <button className="icon-button text-slate-400" title="Search">
               <span className="material-symbols-outlined">search</span>
             </button>

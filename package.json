@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mux/mux-player-react": "^2.3.2",
     "material-symbols": "^0.14.6",
     "next": "14.1.0",
     "react": "^18",

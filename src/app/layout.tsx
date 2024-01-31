@@ -3,7 +3,7 @@ import "./globals.css";
 import "material-symbols";
 
 import Header from "@/components/header";
-
+import { typography } from "@/styles/typography";
 export const metadata: Metadata = {
   title:
     "Discover Cannabis Brands, Earn Cash Rewards for Your Honest Reviews | Moodi Day",
@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={typography.body}>
         <Header />
         <main className="max-w-6xl mx-auto pt-[10em] lg:pt-[7em] px-6 pb-6">
           {children}
