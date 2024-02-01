@@ -21,3 +21,22 @@
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 20;
 }
+
+.slick-track {
+  display: flex !important;
+  column-gap: 10px;
+}
+
+@media (width <640px) {
+  .slick-list {
+    overflow: scroll !important;
+  }
+
+  .slick-track {
+    transform: none !important;
+  }
+
+  .carousel-states .slick-dots{
+    display: none !important;
+  }
+}

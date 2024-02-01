@@ -2,11 +2,15 @@ import { typography } from "@/styles/typography";
 import Image from "next/image";
 
 import banner from "@/assets/Moodi Day HB.svg";
-import VideoCarousel from "@/components/video-carousel";
+import VideoCarousel from "@/components/carousel/variant-video";
+import Carousel from "@/components/carousel";
+import statesSources from "./_states";
+import StateCard from "@/components/card/state-card";
+import { v4 } from "uuid";
 
 export default function Home() {
   return (
-    <div style={{ height: "150vh" }}>
+    <div>
       <h1
         className={`${typography.title} text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-center mb-1 md:mb-3`}
       >
@@ -23,6 +27,16 @@ export default function Home() {
       <div className="flex flex-col gap-6">
         <VideoCarousel name="Trending reviews" items={[]} />
         <VideoCarousel name="Popular strains" items={[]} />
+        <Carousel
+          className="carousel-states"
+          name="Browse products by state"
+          items={statesSources.map((state, i) => (
+            <StateCard {...state} key={v4()} />
+          ))}
+          autoplay
+          infinite
+          dots
+        />
         <VideoCarousel name="Concentrates 101" items={[]} />
         <VideoCarousel name="Popular smoking tools & devices" items={[]} />
       </div>

@@ -70,7 +70,7 @@ export default function Header() {
           </div>
 
           <Link
-            className={`bg-orange-600 text-white md:font-bold sm:font-semibold font-medium ${pageLinkClass} whitespace-nowrap`}
+            className={`bg-orange-600 hover:bg-orange-700 text-white md:font-bold sm:font-semibold font-medium ${pageLinkClass} whitespace-nowrap`}
             href={"/tips-tricks"}
           >
             Join us

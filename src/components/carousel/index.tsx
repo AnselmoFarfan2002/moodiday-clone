@@ -1,45 +1,76 @@
-import { ReactNode } from "react";
+"use client";
+
+import Slider from "react-slick";
+import CustomArrow from "./arrows";
+
 import ArrowLeft from "@/assets/svg-icons/arrow-left.svg";
 import ArrowRight from "@/assets/svg-icons/arrow-right.svg";
-import Image from "next/image";
+import { ReactNode } from "react";
+import Typography from "../custom/Typography";
+import FeelingTag from "../custom/tag";
 
-export default function Carousel({ children }: { children: ReactNode }) {
+export default function Carousel({
+  name,
+  items,
+  autoplay = false,
+  infinite = false,
+  dots = false,
+  className = "",
+}: {
+  className?: string;
+  name: string;
+  items: Array<ReactNode>;
+  autoplay?: boolean;
+  infinite?: boolean;
+  dots?: boolean;
+}) {
+  const settings = {
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 5,
+    arrows: true,
+    draggable: false,
+    nextArrow: <CustomArrow srcSVG={ArrowRight} pos="right-[-20px]" />,
+    prevArrow: <CustomArrow srcSVG={ArrowLeft} pos="left-[-20px]" />,
+    autoplaySpeed: 2000,
+    autoplay,
+    infinite,
+    dots,
+    responsive: [
+      {
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 5,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   return (
-    <div className="relative w-full" data-carousel="static">
-      <div className="relative flex gap-3 overflow-auto  sm:overflow-x-hidden px-3">
-        {children}
-      </div>
+    <div className={className}>
+      <div className="flex justify-between mb-4">
+        <Typography variant="h4">{name}</Typography>
 
-      <div className="hidden sm:block">
-        <button
-          type="button"
-          className="bg-slate-100 absolute translate-y-[-50%] top-[50%] p-3 rounded-full border shadow-lg hover:bg-slate-200"
-        >
-          <Image
-            src={ArrowLeft}
-            width={10}
-            height={10}
-            alt="prev"
-            className="w-50 aspect-square"
-          />
-          <span>
-            <span className="sr-only">Previous</span>
-          </span>
-        </button>
-        <button
-          type="button"
-          className="bg-slate-100 absolute translate-y-[-50%] top-[50%] right-0 p-3 rounded-full border shadow-lg hover:bg-slate-200"
-        >
-          <Image
-            src={ArrowRight}
-            width={10}
-            height={10}
-            alt="prev"
-            className="w-50 aspect-square"
-          />
-          <span className="sr-only">Next</span>
+        <button>
+          <FeelingTag feeling="View All" className="bg-fuchsia-400 hover:bg-fuchsia-500" />
         </button>
       </div>
+      <Slider {...settings}>{items}</Slider>
     </div>
   );
 }
