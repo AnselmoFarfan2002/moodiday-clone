@@ -23,25 +23,28 @@ export default function VideoModal({ title }: { title: string }) {
     <article className="w-[100vw] h-[100vh] fixed top-0 left-0 bg-slate-500/25 z-20 flex justify-center items-center">
       <div className="w-full h-full fixed" onClick={onClose} />
       <div
-        className={`h-full w-full bg-white z-30 overflow-scroll
+        className={`h-full w-full bg-white z-30 overflow-scroll relative
         sm:flex sm:max-h-[600px] sm:max-w-[800px] sm:overflow-hidden md:rounded-2xl`}
       >
-        <section className="flex justify-center bg-black w-full">
+        <section className="flex justify-center bg-black w-full h-full sm:min-w-[337px]">
           <MuxPlayer
             theme="classic"
             playbackId={review.id}
             startTime={0}
-            style={{ height: "600px", width: "337px" }}
-            autoPlay={true}
+            autoPlay={"any"}
           />
         </section>
         <section className="p-8 flex flex-col gap-4 text-sm font-light text-slate-600">
           <div className="flex justify-between">
             <FeelingTag feeling={review.feeling} className="" />
-            <button className="icon-button" onClick={onClose}>
-              <span className="material-symbols-rounded">close</span>
-            </button>
           </div>
+
+          <button
+            className="pt-1 px-1 bg-slate-100 hover:bg-slate-200 border rounded-xl max-w-[34px] absolute right-0 top-0 !m-5"
+            onClick={onClose}
+          >
+            <span className="material-symbols-rounded">close</span>
+          </button>
 
           <LinePropValue prop="Product name" value={review.title} />
           <LinePropValue prop="Product brand" value={product.brand} />

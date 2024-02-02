@@ -52,6 +52,20 @@ export default function Carousel({
         },
       },
       {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        },
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
@@ -67,7 +81,10 @@ export default function Carousel({
         <Typography variant="h4">{name}</Typography>
 
         <button>
-          <FeelingTag feeling="View All" className="bg-fuchsia-400 hover:bg-fuchsia-500" />
+          <FeelingTag
+            feeling="View All"
+            className="bg-fuchsia-400 hover:bg-fuchsia-500"
+          />
         </button>
       </div>
       <Slider {...settings}>{items}</Slider>

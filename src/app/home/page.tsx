@@ -1,7 +1,7 @@
 import { typography } from "@/styles/typography";
 import Image from "next/image";
 
-import banner from "@/assets/Moodi Day HB.svg";
+import banner from "@/assets/banner/Moodi Day HB.svg";
 import VideoCarousel from "@/components/carousel/variant-video";
 import Carousel from "@/components/carousel";
 import statesSources from "./_states";

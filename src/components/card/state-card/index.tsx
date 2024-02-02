@@ -11,7 +11,7 @@ export default function StateCard({
 }) {
   return (
     <div className="state-card">
-      <Image src={src} alt="name" />
+      <Image src={src} alt="name" className="w-full"/>
       <TextHelper>{name}</TextHelper>
     </div>
   );
