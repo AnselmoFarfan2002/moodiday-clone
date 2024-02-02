@@ -11,14 +11,21 @@ import statesSources from "@/app/home/_states";
 export default function Home() {
   return (
     <div>
-      <Image src={banner} alt="Buy it - Try it - Review it" className="my-6" />
+      <Image
+        src={banner}
+        alt="Buy it - Try it - Review it"
+        className="my-6"
+        width={1260}
+        height={200}
+        loading="eager"
+      />
 
       <div className="flex flex-col gap-6">
         <Carousel
           className="carousel-states"
           name="Browse products by state"
           items={statesSources.map((state, i) => (
-            <StateCard {...state} key={v4()} />
+            <StateCard {...state} key={v4()} loading="eager" />
           ))}
           autoplay
           infinite

@@ -1,47 +1,38 @@
+"use client";
+
 import { typography } from "@/styles/typography";
 import Link from "next/link";
 import HeaderEffect from "./effect";
+import { usePathname } from "next/navigation";
+import routes from "./routes";
 
 export default function Header() {
   const container = "border rounded-3xl shadow my-auto text-slate-500";
   const display = "grid items-center whitespace-nowrap";
   const pageLinkClass = `px-3 h-fit py-1 ${container} ${display} font-normal`;
+  const pathname = usePathname();
 
-  const Links = () => (
-    <>
+  const Links = () =>
+    routes.map((route, i) => (
       <Link
-        className={`${pageLinkClass} hover:bg-slate-100 flex-1 text-center`}
-        href={"/products"}
+        key={"route-" + i}
+        className={`${pageLinkClass} flex-1 text-center ${
+          pathname == route.pathname
+            ? "bg-fuchsia-400 text-white"
+            : "hover:bg-slate-100"
+        } `}
+        href={route.pathname}
       >
-        Products
+        {route.name}
       </Link>
-      <Link
-        className={`${pageLinkClass} hover:bg-slate-100 flex-1 text-center`}
-        href={"/accessories-devices"}
-      >
-        Accessories & Devices
-      </Link>
-      <Link
-        className={`${pageLinkClass} hover:bg-slate-100 flex-1 text-center`}
-        href={"/strains"}
-      >
-        Strains
-      </Link>
-      <Link
-        className={`${pageLinkClass} hover:bg-slate-100 flex-1 text-center`}
-        href={"/tips-tricks"}
-      >
-        Tips & Tricks
-      </Link>
-    </>
-  );
+    ));
 
   return (
     <>
       <HeaderEffect />
       <header className="px-6 fixed w-full bg-white z-10">
         <div className="pt-6 lg:py-6 flex gap-2 justify-between align-middle sm:flex-wrap max-w-6xl mx-auto">
-          <Link href={"/"} className="whitespace-nowrap">
+          <Link href={"/home"} className="whitespace-nowrap">
             <h2
               className={`${typography.title} lg:text-[1.75em] md:text-[1.75em] sm:text-[1.5em] text-[1.25em] sm:font-black font-extrabold`}
             >

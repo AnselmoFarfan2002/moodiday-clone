@@ -22,7 +22,14 @@ export default function Home() {
         Share honest reviews about cannabis brands, earn rewards
       </h1>
 
-      <Image src={banner} alt="Buy it - Try it - Review it" className="my-6" />
+      <Image
+        src={banner}
+        alt="Buy it - Try it - Review it"
+        className="my-6"
+        width={1260}
+        height={200}
+        loading="eager"
+      />
 
       <div className="flex flex-col gap-6">
         <VideoCarousel name="Trending reviews" items={[]} />
