@@ -9,6 +9,7 @@ export default function FeelingTag({
 }) {
   const bgColors: { [key: string]: string } = {
     Loved: "bg-lime-500",
+    Enyojed: "bg-lime-400 text-shadow",
     Mixed: "bg-amber-500"
   };
 

@@ -7,10 +7,10 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto py-8 grid grid-cols-12 gap-8">
         <div className="col-span-12 md:col-span-6">
           <Typography variant="h4" className="mb-1">
-            Can't find the review you need? Request it!
+            Can{"'"}t find the review you need? Request it!
           </Typography>
           <Typography variant="body2">
-            Our budtender network will review it and let you know when it's
+            Our budtender network will review it and let you know when it{"'"}s
             ready.
           </Typography>
           <ContactForm />

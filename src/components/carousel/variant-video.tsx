@@ -22,11 +22,11 @@ export default function VideoCarousel({
       items={Array.from({ length: 10 }, () => (
         <VideoCard
           key={v4()}
-          id="2KXKPNYvF3EvnT01t7iuAvKdiTsY02GdYEUcEjhyl5wBY"
-          title="PLUGPlay Exotics Vape Cartridge"
-          feeling="Mixed"
-          minutes={0}
-          seconds={10}
+          id="edUmfKz6yEk1mWb007JIELEUDHWmuHYc9R027LUhiaFGk"
+          title="Wana Classic Watermelon Hybrid Gummies"
+          feeling="Enyojed"
+          minutes={1}
+          seconds={24}
         />
       ))}
     />

@@ -33,7 +33,7 @@ export default function ContactForm() {
       <fieldset className="col-span-12">
         <label className="w-full">
           <Typography className="font-semibold mb-2">
-            Brand(s) you'd like us to review*
+            Brand(s) you{"'"}d like us to review*
           </Typography>
         </label>
         <input className={inputClass} />
